@@ -1,0 +1,123 @@
+/* =========================================================
+   公開版で足した部品（下書き3枚にページごとに書いていたものをまとめた）
+   style.css → article.css → pages.css の順で読む
+   ========================================================= */
+.a-stat-num{font-size:clamp(64px,8vw,132px)}
+
+/* トップ：事業カード */
+.biz{padding:var(--sec-y) var(--gut)}
+.biz-head{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(40px,6vw,120px);align-items:end;margin-bottom:clamp(48px,8vh,90px)}
+.biz-head .en-xl{font-size:clamp(44px,5.4vw,96px)}
+.biz-head p{font-size:15px;line-height:2.1}
+.biz-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(16px,2vw,28px)}
+.biz-card{
+  position:relative;overflow:hidden;border-radius:4px;color:var(--white);text-decoration:none;
+  padding:clamp(26px,2.6vw,44px);min-height:440px;display:grid;align-content:space-between;gap:32px;
+  background:var(--grad-bg);background-color:var(--deep);
+}
+.biz-card.alt{background:linear-gradient(135deg,#0B5E57,#04201E 70%)}
+.biz-card.ink{background:linear-gradient(160deg,#04201E,#020A09 80%)}
+.biz-num{font-family:var(--f-en);font-size:15px;font-weight:500;letter-spacing:.1em;color:var(--mint)}
+.biz-en{font-family:var(--f-en);font-weight:700;text-transform:uppercase;font-size:clamp(40px,4vw,64px);line-height:1;margin-top:8px}
+.biz-jp{font-size:clamp(17px,1.6vw,22px);font-weight:900;line-height:1.6;margin-top:14px}
+.biz-card ul{display:grid;gap:6px;font-size:14px;line-height:1.8;color:rgba(255,255,255,.88)}
+.biz-card li{padding-left:1.2em;position:relative}
+.biz-card li::before{content:"";position:absolute;left:0;top:.75em;width:7px;height:7px;background:var(--mint)}
+.biz-foot{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;font-size:13px;font-weight:700}
+.biz-card:hover .fcard-arrow{background:var(--white);color:var(--deep)}
+
+/* 2段組みの文章ブロック */
+.link-flow{padding:var(--sec-y) var(--gut);display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(40px,6vw,120px)}
+.link-flow.tight{padding-top:0}
+.link-flow h2{font-size:clamp(24px,2.7vw,40px);font-weight:900;line-height:1.6}
+.link-flow-body{display:grid;gap:18px;align-content:start}
+.link-flow-body p,.link-flow-body li{font-size:15px;line-height:2.1}
+.link-flow-body ul{display:grid;gap:4px}
+.link-flow-body ul li{padding-left:1.2em;position:relative}
+.link-flow-body ul li::before{content:"";position:absolute;left:0;top:.95em;width:7px;height:7px;background:var(--mint)}
+.text-link{color:var(--teal);font-weight:700;text-decoration:none;border-bottom:1px solid currentColor}
+.answer{font-size:clamp(16px,1.4vw,19px)!important;font-weight:700;line-height:2!important}
+
+/* 範囲・手順のカード */
+.scope{padding:var(--sec-y) var(--gut);background:radial-gradient(1200px 700px at 88% 0%,#CFF3E8,transparent 62%),var(--paper)}
+.scope-head{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(40px,6vw,120px);align-items:end;margin-bottom:clamp(48px,8vh,90px)}
+.scope-head .en-xl{font-size:clamp(44px,5.4vw,96px)}
+.scope-head p{font-size:15px;line-height:2.1}
+.scope-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(14px,1.6vw,24px)}
+.scope-item{background:var(--white);border-radius:4px;padding:clamp(22px,2.4vw,34px);display:grid;gap:10px;align-content:start}
+.scope-item span{font-family:var(--f-en);font-size:15px;font-weight:500;color:var(--teal);letter-spacing:.06em}
+.scope-item h3{font-size:clamp(16px,1.5vw,19px);font-weight:900;line-height:1.6}
+.scope-item p{font-size:13px;line-height:1.9;color:var(--ink-2)}
+
+/* 事例 */
+.case{padding:var(--sec-y) var(--gut);display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(40px,6vw,120px)}
+.case + .case{padding-top:0}
+.case-head h2{font-size:clamp(24px,2.7vw,40px);font-weight:900;line-height:1.6}
+.case-no{font-family:var(--f-en);font-size:15px;font-weight:500;color:var(--teal);letter-spacing:.06em;margin-bottom:10px}
+.case-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.case-tags span{font-size:12px;padding:5px 12px;border:1px solid var(--line);border-radius:999px;color:var(--ink-2)}
+.a-hero .case-tags span{border-color:rgba(255,255,255,.35);color:rgba(255,255,255,.86)}
+.case-body{display:grid;gap:22px;align-content:start}
+.case-body p{font-size:15px;line-height:2.1}
+.case-body h3{font-size:clamp(17px,1.6vw,21px);font-weight:900;line-height:1.6;margin-top:14px}
+.case-nums{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.case-num{background:rgba(11,94,87,.07);border-radius:4px;padding:18px 16px}
+.case-num b{display:block;font-family:var(--f-en);font-size:clamp(22px,2.4vw,32px);font-weight:600;color:var(--teal);line-height:1.3}
+.case-num small{font-size:12px;color:var(--ink-2);line-height:1.7}
+.case-table{width:100%;border-collapse:collapse;font-size:14px}
+.case-table th,.case-table td{padding:16px 10px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top;line-height:1.8}
+.case-table thead th{font-size:12px;color:var(--ink-2);letter-spacing:.04em}
+.case-table tbody th{font-weight:900;white-space:nowrap}
+.case-note{font-size:12px!important;line-height:1.8!important;color:var(--ink-2);padding:12px 16px;background:rgba(11,94,87,.07);border-radius:3px}
+
+/* 事例一覧のカード */
+.case-cards{display:grid;gap:clamp(14px,1.6vw,24px)}
+.case-card{display:grid;gap:14px;padding:clamp(22px,2.6vw,36px);border:1px solid var(--line);border-radius:4px;text-decoration:none;background:var(--white);transition:border-color .25s ease,transform .25s ease}
+.case-card:hover{border-color:var(--teal);transform:translateY(-2px)}
+.case-card h3{font-size:clamp(18px,1.8vw,24px);font-weight:900;line-height:1.6}
+.case-card p{font-size:14px;line-height:2;color:var(--ink-2)}
+.case-card .more{font-size:13px;font-weight:700;color:var(--teal)}
+
+/* ご提案の流れ */
+.price-three{position:relative;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(16px,2vw,28px);max-width:1180px;margin-inline:auto}
+.price-three .price{font-size:clamp(56px,5.4vw,88px)}
+.price-three .card p.desc{font-size:13px;line-height:1.9;color:rgba(255,255,255,.75)}
+
+/* 比較表：文章を入れる版 */
+.cmp.text td{font-family:var(--f-jp);font-size:13px;line-height:1.8;text-align:left;vertical-align:top}
+.cmp.text th{vertical-align:top}
+.cmp.text tbody th{white-space:nowrap}
+
+/* 会社概要・規約などの文章ページ */
+.prose{padding:var(--sec-y) var(--gut);display:grid;gap:clamp(36px,6vh,64px);max-width:calc(880px + var(--gut) * 2)}
+.prose section{display:grid;gap:14px}
+.prose h2{font-size:clamp(19px,1.9vw,26px);font-weight:900;line-height:1.6}
+.prose p,.prose li{font-size:15px;line-height:2.1}
+.prose ol{list-style:decimal;padding-left:1.6em}
+.prose ul{list-style:disc;padding-left:1.4em}
+.co-table{width:100%;border-collapse:collapse;font-size:15px}
+.co-table th,.co-table td{padding:18px 10px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top;line-height:1.9}
+.co-table th{width:9em;color:var(--ink-2);font-weight:500;white-space:nowrap}
+.foot-sub{margin-top:14px;font-size:12px}
+.foot-sub a{color:var(--ink-2)}
+
+@media (min-width:1101px){.biz,.link-flow,.scope,.case,.prose{padding-right:calc(var(--gut) + 130px)}}
+@media (max-width:1100px){.biz-cards{grid-template-columns:1fr}.biz-card{min-height:340px}}
+@media (max-width:900px){
+  .biz-head,.link-flow,.scope-head,.case{grid-template-columns:1fr}
+  .scope-list,.price-three,.case-nums{grid-template-columns:1fr}
+  .case-table{font-size:13px}
+  .cmp.text{min-width:720px}
+}
+
+/* 事例ページ：流れの手順と、実際の画面 */
+.case-steps{list-style:none;counter-reset:cs;display:grid;gap:10px;padding:0;margin:0}
+.case-steps li{counter-increment:cs;display:grid;grid-template-columns:34px 1fr;column-gap:14px;padding:14px 16px;border:1px solid var(--line);border-radius:4px;background:var(--white)}
+.case-steps li:before{content:counter(cs);grid-row:1 / span 2;width:34px;height:34px;border-radius:50%;background:var(--teal);color:#fff;font-family:var(--f-en);font-weight:600;display:flex;align-items:center;justify-content:center}
+.case-steps b{font-weight:900;line-height:1.7}
+.case-steps span{font-size:14px;line-height:1.9;color:var(--ink-2)}
+.case-figs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.case-figs figure{margin:0;display:grid;gap:8px;align-content:start}
+.case-figs img{width:100%;height:auto;border:1px solid var(--line);border-radius:4px;background:#fff;display:block}
+.case-figs figcaption{font-size:12px;line-height:1.8;color:var(--ink-2)}
+@media (max-width:720px){.case-figs{grid-template-columns:1fr}}
