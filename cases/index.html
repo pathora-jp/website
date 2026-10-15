@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>FDEの事例｜AI業務改善の「これまで」と「いま」を公開｜Pathora</title>
+<meta name="description" content="PathoraがFDE（Forward Deployed Engineer）型で行ったAI業務改善の事例を1件ずつ公開しています。業種と規模、業務ごとの「これまで」と「いま」、作業時間（試算か実測か）、仕組みづくりの期間を記載しています。">
+<link rel="canonical" href="https://pathora.jp/cases/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="株式会社Pathora">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:title" content="FDEの事例｜AI業務改善の「これまで」と「いま」を公開｜Pathora">
+<meta property="og:description" content="PathoraがFDE（Forward Deployed Engineer）型で行ったAI業務改善の事例を1件ずつ公開しています。業種と規模、業務ごとの「これまで」と「いま」、作業時間（試算か実測か）、仕組みづくりの期間を記載しています。">
+<meta property="og:url" content="https://pathora.jp/cases/">
+<meta property="og:image" content="https://pathora.jp/assets/ogp.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600&family=Noto+Sans+JP:wght@400;500;700;900&family=Oswald:wght@500;600;700&display=swap">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="stylesheet" href="../assets/article.css">
+<link rel="stylesheet" href="../assets/pages.css">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "Organization",
+   "@id": "https://pathora.jp/#org",
+   "name": "株式会社Pathora",
+   "alternateName": [
+    "Pathora",
+    "パソラ"
+   ],
+   "url": "https://pathora.jp/",
+   "logo": "https://pathora.jp/assets/icon-512.png",
+   "foundingDate": "2026-03-25",
+   "founder": {
+    "@type": "Person",
+    "name": "竹内 脩悟",
+    "jobTitle": "代表取締役"
+   },
+   "address": {
+    "@type": "PostalAddress",
+    "postalCode": "107-0061",
+    "addressRegion": "東京都",
+    "addressLocality": "港区",
+    "streetAddress": "北青山1丁目3-3 三橋ビル3F",
+    "addressCountry": "JP"
+   },
+   "telephone": "+81-90-5821-8881",
+   "knowsAbout": [
+    "FDE",
+    "Forward Deployed Engineer",
+    "AIによる業務改善",
+    "業務自動化"
+   ]
+  },
+  {
+   "@type": "CollectionPage",
+   "@id": "https://pathora.jp/cases/#page",
+   "name": "FDEの事例",
+   "url": "https://pathora.jp/cases/",
+   "inLanguage": "ja",
+   "publisher": {
+    "@id": "https://pathora.jp/#org"
+   },
+   "mainEntity": {
+    "@type": "ItemList",
+    "itemListElement": [
+     {
+      "@type": "ListItem",
+      "position": 1,
+      "url": "https://pathora.jp/cases/online-school-support/",
+      "name": "事例01：オンラインスクールの受講生サポート業務"
+     },
+     {
+      "@type": "ListItem",
+      "position": 2,
+      "url": "https://pathora.jp/cases/sales-company-contract/",
+      "name": "事例02：営業会社の契約締結業務"
+     }
+    ]
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "トップ",
+     "item": "https://pathora.jp/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "FDEの事例",
+     "item": "https://pathora.jp/cases/"
+    }
+   ]
+  }
+ ]
+}
+</script>
+</head>
+<body class="article-page">
+<header class="hdr" id="hdr">
+  <div class="hdr-bar">
+    <a class="logo" href="../" aria-label="Pathora トップへ">
+      <svg viewBox="0 0 28 28" fill="none" aria-hidden="true">
+        <path d="M2 25C11 25 13 12 26 4" stroke="#0B5E57" stroke-width="3" stroke-linecap="round"/>
+        <path d="M2 17C11 17 14 9 26 4" stroke="#0E7A6C" stroke-width="3" stroke-linecap="round"/>
+        <path d="M2 9C11 9 15 6 26 4" stroke="#1FD1A5" stroke-width="3" stroke-linecap="round"/>
+      </svg>
+      <span>PATHORA</span>
+    </a>
+    <nav class="hdr-links" aria-label="主要リンク">
+      <a class="pill" href="../service/">サービス</a>
+      <a class="pill" href="../fde/">FDEとは</a>
+      <a class="pill" href="../cases/">事例</a>
+      <a class="pill" href="../company/">会社について</a>
+      <a class="pill cta" href="https://timerex.net/s/seot0809_d3d2/43a52e75" target="_blank" rel="noopener">無料で相談する</a>
+    </nav>
+    <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="spmenu"><span></span><span></span><span class="sr">メニュー</span></button>
+  </div>
+</header>
+
+<nav class="spmenu" id="spmenu" aria-label="メニュー" hidden>
+  <a href="../">TOP</a>
+  <a href="../service/">SERVICE<small>AIによる業務改善</small></a>
+  <a href="../fde/">FDE<small>FDEとは</small></a>
+  <a href="../cases/">CASES<small>事例</small></a>
+  <a href="../company/">COMPANY<small>会社について</small></a>
+  <a href="#contact">CONTACT<small>お問い合わせ</small></a>
+</nav>
+<main>
+
+  <section class="a-hero">
+    <nav class="crumb" aria-label="パンくずリスト"><a href="../">トップ</a><span aria-hidden="true">/</span><span>FDEの事例</span></nav>
+    <p class="a-en" aria-hidden="true">Case<br><span>Studies.</span></p>
+    <div class="a-hero-body">
+      <p class="sec-label">FDEの事例</p>
+      <h1>FDEの事例</h1>
+      <p class="a-lead">PathoraがFDE型で行ったAI業務改善の事例を1件ずつ公開しています。業務ごとの「これまで」と「いま」を並べ、作業時間は試算か実測かを分けて記載しています。</p>
+      <p><a class="btn" href="https://timerex.net/s/seot0809_d3d2/43a52e75" target="_blank" rel="noopener">無料で相談する <i>→</i></a></p>
+    </div>
+  </section>
+
+  <section class="link-flow" id="list">
+    <div>
+      <p class="sec-label">事例の一覧</p>
+      <h2>公開している事例<br>（2件）</h2>
+    </div>
+    <div class="case-cards"><a class="case-card" href="../cases/sales-company-contract/"><p class="case-no">CASE 02</p><h3>営業会社の契約締結業務｜1件20〜30分の契約業務を約5分に（試算）</h3><p class="case-tags"><span>営業・販売</span><span>契約・バックオフィス</span><span>電子契約</span></p><p>営業を行う会社で、業務委託契約の作成から署名の依頼、署名後の記録までを1つの仕組みにまとめました。1件あたりの作業時間は約20〜30分から約5分になる見込みです（試算）。</p><p class="more">この事例を読む →</p></a><a class="case-card" href="../cases/online-school-support/"><p class="case-no">CASE 01</p><h3>オンラインスクールの受講生サポート業務｜月11時間の確認作業を3時間に（試算）</h3><p class="case-tags"><span>教育・スクール</span><span>受講生十数名規模</span><span>カスタマーサポート</span></p><p>オンラインの動画編集スクールで受講生サポートの定型業務を棚卸しし3つの業務を自動化しました。月の作業時間は約11時間から約3時間になる見込みです（試算）。</p><p class="more">この事例を読む →</p></a></div>
+  </section>
+
+  <section class="scope" id="rule">
+    <div class="scope-head">
+      <div>
+        <p class="sec-label">事例の書き方</p>
+        <h2 class="en-xl grad-text">How we<br>report</h2>
+      </div>
+      <div>
+        <h3 class="q-title">事例の数字はどう読めばよいですか？</h3>
+        <p>どの事例にも同じ項目を載せています。試算の数字は試算と明記し、実測が取れた時点で更新します。</p>
+      </div>
+    </div>
+    <ol class="scope-list">
+      <li class="scope-item"><span>01</span><h3>業種と規模</h3><p>どんな会社のどの業務かが分かるように記載します。会社名はお客様の許可がある場合のみ記載します。</p></li>
+      <li class="scope-item"><span>02</span><h3>これまでといま</h3><p>業務ごとに手作業だったときのやり方と、仕組みをつくったあとのやり方を並べます。</p></li>
+      <li class="scope-item"><span>03</span><h3>時間の数字と期間</h3><p>月の作業時間は試算か実測かを分けて記載します。仕組みづくりにかかった期間もあわせて載せます。</p></li>
+    </ol>
+  </section>
+
+</main>
+<footer class="foot" id="contact">
+  <div class="fcards">
+    <a class="fcard" href="https://timerex.net/s/seot0809_d3d2/43a52e75" target="_blank" rel="noopener">
+      <div>
+        <p class="fcard-en">CONTACT</p>
+        <p class="fcard-jp">無料で相談する</p>
+      </div>
+      <div class="fcard-foot">
+        <p>ご都合のよい日時を選んでそのままご予約いただけます。<br>初回のご相談は60分・オンライン・無料です。</p>
+        <span class="fcard-arrow" aria-hidden="true">→</span>
+      </div>
+    </a>
+    <a class="fcard alt" href="https://docs.google.com/forms/d/e/1FAIpQLScaYLmLzED6YhWuveV8BB5mpX2jZKJN-2-LMZNtbzKGYvYU2A/viewform" target="_blank" rel="noopener">
+      <div>
+        <p class="fcard-en">FORM</p>
+        <p class="fcard-jp">フォームで問い合わせる</p>
+      </div>
+      <div class="fcard-foot">
+        <p>まずは質問だけという場合も<br>お気軽にお送りください。</p>
+        <span class="fcard-arrow" aria-hidden="true">→</span>
+      </div>
+    </a>
+  </div>
+  <p class="other-contact">お電話（090-5821-8881／平日10:00〜18:00）でも受け付けています。</p>
+
+  <p class="foot-mark grad-text" aria-hidden="true">Right people,<br>right path.</p>
+
+  <div class="foot-grid">
+    <dl class="company-dl">
+      <dt>会社名</dt><dd>株式会社Pathora</dd>
+      <dt>所在地</dt><dd>〒107-0061<br>東京都港区北青山1丁目3-3 三橋ビル3F</dd>
+      <dt>代表者</dt><dd>代表取締役 竹内 脩悟</dd>
+      <dt>設立</dt><dd>2026年3月25日</dd>
+      <dt>事業内容</dt><dd>AIによる業務改善・BPO</dd>
+      <dt>電話</dt><dd>090-5821-8881（平日10:00〜18:00）</dd>
+    </dl>
+    <nav class="foot-nav" aria-label="サイトマップ">
+      <a href="../">TOP</a><a href="../service/">SERVICE</a>
+      <a href="../fde/">FDE</a><a href="../cases/">CASES</a>
+      <a href="../company/">COMPANY</a><a href="#contact">CONTACT</a>
+    </nav>
+  </div>
+  <p class="copy">© Pathora All Rights Reserved 2026.</p>
+  <p class="foot-sub"><a href="../privacy/">プライバシーポリシー</a></p>
+</footer>
+
+<div class="sp-cta">
+  <a href="https://timerex.net/s/seot0809_d3d2/43a52e75" target="_blank" rel="noopener">無料で相談する →</a>
+  <a href="../cases/">事例 →</a>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="../assets/article.js"></script>
+</body>
+</html>
